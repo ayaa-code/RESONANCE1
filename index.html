@@ -1576,6 +1576,17 @@ si<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- SCREEN 1.5: Input Nama dan Sekolah -->
+    <div id="screen-player-info" class="screen-overlay hidden">
+        <div class="content-card">
+            <h1>RESONANCE ODYSSEY</h1>
+            <p>Masukkan Informasi Pemain</p>
+            <input type="text" id="input-player-name" placeholder="Ketik namamu di sini...">
+            <input type="text" id="input-school-name" placeholder="Ketik nama sekolahmu di sini..." style="margin-top: 10px;">
+            <button class="btn-gold" onclick="confirmPlayerInfo()">LANJUT KE PILIHAN AVATAR</button>
+        </div>
+    </div>
+
     <!-- SCREEN 2: Aturan -->
     <div id="screen-rules" class="screen-overlay hidden">
         <div class="content-card">
@@ -1867,10 +1878,27 @@ si<!DOCTYPE html>
 
         // Function untuk menu awal
         function startGameFlow() {
-            // Langsung ke pemilihan karakter (skip form input di modal)
+            // Tampilkan form input nama dan sekolah
             document.getElementById('screen-name').classList.add('hidden');
-            document.getElementById('screen-rules').classList.remove('hidden');
-            showCharSelect(); // Langsung ke pilih karakter
+            document.getElementById('screen-player-info').classList.remove('hidden');
+        }
+
+        function confirmPlayerInfo() {
+            const name = document.getElementById('input-player-name').value;
+            const school = document.getElementById('input-school-name').value;
+            if (!name) {
+                alert('Masukkan nama terlebih dahulu!');
+                return;
+            }
+            if (!school) {
+                alert('Masukkan nama sekolah terlebih dahulu!');
+                return;
+            }
+            state.playerName = name;
+            state.schoolName = school;
+            document.getElementById('screen-player-info').classList.add('hidden');
+            document.getElementById('screen-char').classList.remove('hidden');
+            initCharList();
         }
 
         function openInfoModal() {
