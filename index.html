@@ -835,6 +835,260 @@ si<!DOCTYPE html>
             overflow: hidden;
         }
 
+        /* Home Menu Cards */
+        .home-cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(20px, 5vw, 40px);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .home-card {
+            background: white;
+            border: clamp(3px, 1vw, 6px) solid #7EC8E3;
+            border-radius: clamp(15px, 3vw, 25px);
+            padding: clamp(30px, 5vw, 50px);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: clamp(200px, 35vw, 280px);
+            position: relative;
+        }
+
+        .home-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            border-color: #FFB6D9;
+            background: linear-gradient(135deg, rgba(255, 182, 217, 0.1) 0%, rgba(126, 200, 227, 0.1) 100%);
+        }
+
+        .home-card:active {
+            transform: translateY(-2px);
+        }
+
+        .home-card-icon {
+            font-size: clamp(50px, 15vw, 80px);
+            margin-bottom: clamp(15px, 3vw, 25px);
+            display: block;
+        }
+
+        .home-card-title {
+            color: #2C5F7F;
+            font-weight: 900;
+            font-size: clamp(18px, 4vw, 28px);
+            margin: clamp(10px, 2vw, 15px) 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .home-card-desc {
+            color: #5EB3D6;
+            font-size: clamp(12px, 2.5vw, 15px);
+            font-weight: 600;
+        }
+
+        /* Modal untuk Input Foto dan Tulisan */
+        #info-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #info-modal.show {
+            display: flex !important;
+        }
+
+        .info-modal-content {
+            background: white;
+            border-radius: clamp(15px, 3vw, 25px);
+            padding: clamp(25px, 5vw, 40px);
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .info-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: clamp(20px, 3vw, 30px);
+            border-bottom: 2px solid #7EC8E3;
+            padding-bottom: clamp(15px, 2vw, 20px);
+        }
+
+        .info-modal-header h2 {
+            margin: 0;
+            color: #2C5F7F;
+            font-size: clamp(20px, 4vw, 28px);
+        }
+
+        .info-modal-close {
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: #7EC8E3;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .info-modal-close:hover {
+            color: #FFB6D9;
+            transform: scale(1.1);
+        }
+
+        .form-group {
+            margin-bottom: clamp(20px, 3vw, 30px);
+        }
+
+        .form-group label {
+            display: block;
+            color: #2C5F7F;
+            font-weight: 700;
+            margin-bottom: clamp(8px, 1.5vw, 12px);
+            font-size: clamp(13px, 2.5vw, 16px);
+        }
+
+        .photo-upload-box {
+            border: 2px dashed #7EC8E3;
+            border-radius: 12px;
+            padding: clamp(20px, 3vw, 30px);
+            text-align: center;
+            background: #F0F8FF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-upload-box:hover {
+            border-color: #FFB6D9;
+            background: #FFF0F7;
+        }
+
+        .photo-upload-box.has-file {
+            border-color: #7EC8E3;
+            background: #E6F7FF;
+        }
+
+        #photo-input {
+            display: none;
+        }
+
+        .photo-preview {
+            margin-top: clamp(12px, 2vw, 15px);
+            display: none;
+        }
+
+        .photo-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .photo-preview.show {
+            display: block;
+        }
+
+        #text-input {
+            width: 100%;
+            padding: clamp(12px, 2vw, 15px);
+            border: 2px solid #7EC8E3;
+            border-radius: 8px;
+            font-size: clamp(13px, 2.5vw, 16px);
+            font-family: 'Poppins', sans-serif;
+            color: #2C5F7F;
+            resize: vertical;
+            min-height: 100px;
+            transition: all 0.3s;
+        }
+
+        #text-input:focus {
+            outline: none;
+            border-color: #FFB6D9;
+            box-shadow: 0 0 15px rgba(255, 182, 217, 0.3);
+            background-color: #FFF0F7;
+        }
+
+        .info-modal-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(12px, 2vw, 15px);
+            margin-top: clamp(20px, 3vw, 30px);
+        }
+
+        .btn-cancel, .btn-submit {
+            padding: clamp(12px, 2vw, 15px) clamp(15px, 3vw, 20px);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: clamp(13px, 2.5vw, 16px);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cancel {
+            background: #E0E0E0;
+            color: #666;
+        }
+
+        .btn-cancel:hover {
+            background: #D0D0D0;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #7EC8E3 0%, #A8D8EA 100%);
+            color: white;
+            border: 2px solid #7EC8E3;
+            box-shadow: 0 4px 12px rgba(126, 200, 227, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #A8D8EA 0%, #C8E6F5 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(126, 200, 227, 0.5);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
         /* End Screen */
         #end-overlay {
             display: none;
@@ -1252,14 +1506,27 @@ si<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- SCREEN 1: Input Nama -->
+    <!-- SCREEN 1: Home Menu dengan 2 Kartu -->
     <div id="screen-name" class="screen-overlay">
         <div class="content-card">
             <h1>RESONANCE ODYSSEY</h1>
             <p>Selamat Datang, Penjelajah!</p>
-            <input type="text" id="input-player-name" placeholder="Ketik namamu di sini...">
-            <input type="text" id="input-school-name" placeholder="Ketik nama sekolahmu di sini..." style="margin-top: 10px;">
-            <button class="btn-gold" onclick="showRules()">START GAME</button>
+            
+            <div class="home-cards-container">
+                <!-- Card 1: Main Game -->
+                <div class="home-card" onclick="startGameFlow()">
+                    <span class="home-card-icon">🎮</span>
+                    <h3 class="home-card-title">Main Game</h3>
+                    <p class="home-card-desc">Mulai petualangan seru!</p>
+                </div>
+                
+                <!-- Card 2: Info/Help -->
+                <div class="home-card" onclick="openInfoModal()">
+                    <span class="home-card-icon">❓</span>
+                    <h3 class="home-card-title">Tentang</h3>
+                    <p class="home-card-desc">Tambahkan info Anda</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1375,6 +1642,49 @@ si<!DOCTYPE html>
             <div id="end-title"></div>
             <div id="end-message"></div>
             <button class="btn-gold" onclick="location.reload()">MAIN LAGI 🔄</button>
+        </div>
+    </div>
+
+    <!-- MODAL: Input Foto dan Tulisan -->
+    <div id="info-modal">
+        <div class="info-modal-content">
+            <div class="info-modal-header">
+                <h2>Tambahkan Informasi</h2>
+                <button class="info-modal-close" onclick="closeInfoModal()">✕</button>
+            </div>
+
+            <div class="form-group">
+                <label for="player-name-field">Nama Pemain:</label>
+                <input type="text" id="player-name-field" class="btn-gold" placeholder="Masukkan nama Anda..." style="background: white; color: #2C5F7F; border: 2px solid #7EC8E3; box-shadow: none; padding: 12px; text-align: left;">
+            </div>
+
+            <div class="form-group">
+                <label for="school-name-field">Nama Sekolah:</label>
+                <input type="text" id="school-name-field" class="btn-gold" placeholder="Masukkan nama sekolah..." style="background: white; color: #2C5F7F; border: 2px solid #7EC8E3; box-shadow: none; padding: 12px; text-align: left;">
+            </div>
+
+            <div class="form-group">
+                <label for="photo-input">Upload Foto:</label>
+                <div class="photo-upload-box" onclick="document.getElementById('photo-input').click()">
+                    <div style="font-size: 30px; margin-bottom: 10px;">📷</div>
+                    <p style="color: #5EB3D6; margin: 0; font-weight: 600;">Klik untuk upload foto</p>
+                </div>
+                <input type="file" id="photo-input" accept="image/*">
+                <div class="photo-preview">
+                    <img id="photo-preview-img" src="" alt="Preview">
+                    <button type="button" onclick="clearPhoto()" style="background: #FFB6D9; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">Hapus Foto</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="text-input">Tulisan/Keterangan:</label>
+                <textarea id="text-input" placeholder="Tulis informasi, pesan, atau keterangan Anda di sini..."></textarea>
+            </div>
+
+            <div class="info-modal-buttons">
+                <button class="btn-cancel" onclick="closeInfoModal()">Batal</button>
+                <button class="btn-submit" onclick="saveInfoAndStartGame()">Simpan & Mulai Game</button>
+            </div>
         </div>
     </div>
 
@@ -1509,19 +1819,87 @@ si<!DOCTYPE html>
             }
         }
 
+        // Function untuk menu awal
+        function startGameFlow() {
+            // Langsung ke pemilihan karakter (skip form input di modal)
+            document.getElementById('screen-name').classList.add('hidden');
+            document.getElementById('screen-rules').classList.remove('hidden');
+            showCharSelect(); // Langsung ke pilih karakter
+        }
+
+        function openInfoModal() {
+            document.getElementById('info-modal').classList.add('show');
+        }
+
+        function closeInfoModal() {
+            document.getElementById('info-modal').classList.remove('show');
+            // Reset form
+            document.getElementById('player-name-field').value = '';
+            document.getElementById('school-name-field').value = '';
+            document.getElementById('text-input').value = '';
+            clearPhoto();
+        }
+
+        function clearPhoto() {
+            document.getElementById('photo-input').value = '';
+            document.getElementById('photo-preview-img').src = '';
+            document.querySelector('.photo-preview').classList.remove('show');
+        }
+
+        function saveInfoAndStartGame() {
+            const playerName = document.getElementById('player-name-field').value || 'Petualang';
+            const schoolName = document.getElementById('school-name-field').value || 'Sekolah Nusantara';
+            const textInfo = document.getElementById('text-input').value;
+            const photoFile = document.getElementById('photo-input').files[0];
+
+            // Simpan info ke state/localStorage jika diperlukan
+            state.playerName = playerName;
+            state.schoolName = schoolName;
+            state.infoText = textInfo;
+
+            // Handle photo jika ada
+            if (photoFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    state.userPhoto = e.target.result;
+                    proceedWithGame();
+                };
+                reader.readAsDataURL(photoFile);
+            } else {
+                proceedWithGame();
+            }
+        }
+
+        function proceedWithGame() {
+            closeInfoModal();
+            document.getElementById('screen-name').classList.add('hidden');
+            document.getElementById('screen-rules').classList.remove('hidden');
+            showCharSelect(); // Langsung ke pilih karakter
+        }
+
+        // Photo upload handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoInput = document.getElementById('photo-input');
+            if (photoInput) {
+                photoInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            const img = document.getElementById('photo-preview-img');
+                            img.src = event.target.result;
+                            document.querySelector('.photo-preview').classList.add('show');
+                            document.querySelector('.photo-upload-box').classList.add('has-file');
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        });
+
         function showRules() {
-            const name = document.getElementById('input-player-name').value;
-            const school = document.getElementById('input-school-name').value;
-            if (!name) {
-                alert('Masukkan nama terlebih dahulu!');
-                return;
-            }
-            if (!school) {
-                alert('Masukkan nama sekolah terlebih dahulu!');
-                return;
-            }
-            state.playerName = name;
-            state.schoolName = school;
+            // Function ini tidak lagi digunakan karena form sudah dipindahkan ke modal
+            // Tapi tetap dipertahankan untuk compatibility
             document.getElementById('screen-name').classList.add('hidden');
             document.getElementById('screen-rules').classList.remove('hidden');
         }
