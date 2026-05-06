@@ -835,13 +835,18 @@ si<!DOCTYPE html>
         }
 
         /* Home Menu Cards */
+        #screen-name .content-card {
+            max-width: min(95vw, 700px);
+            padding: clamp(20px, 3vw, 28px);
+        }
+
         .home-cards-container {
             display: grid;
-            grid-template-columns: repeat(2, minmax(260px, 1fr));
-            gap: clamp(12px, 2vw, 18px);
+            grid-template-columns: repeat(2, minmax(240px, 1fr));
+            gap: clamp(10px, 1.5vw, 16px);
             justify-content: center;
             width: 100%;
-            max-width: min(95vw, 640px);
+            max-width: min(95vw, 620px);
             margin: 0 auto;
         }
 
@@ -849,7 +854,7 @@ si<!DOCTYPE html>
             background: white;
             border: clamp(3px, 0.8vw, 6px) solid #7EC8E3;
             border-radius: clamp(12px, 2vw, 20px);
-            padding: clamp(16px, 3vw, 22px);
+            padding: clamp(16px, 3vw, 20px);
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -860,7 +865,7 @@ si<!DOCTYPE html>
             justify-content: center;
             aspect-ratio: 1 / 1;
             min-height: 220px;
-            max-width: 320px;
+            max-width: 300px;
             position: relative;
             width: 100%;
         }
