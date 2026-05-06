@@ -63,8 +63,8 @@ si<!DOCTYPE html>
             border: clamp(5px, 1.5vw, 8px) solid var(--wood);
             border-radius: clamp(12px, 3vw, 20px);
             padding: clamp(15px, 4vw, 40px);
-            max-width: clamp(280px, 90vw, 600px);
-            width: clamp(280px, 90vw, 90%);
+            max-width: calc(100vw - 40px);
+            width: 100%;
             text-align: center;
             box-shadow: 0 0 clamp(30px, 8vw, 50px) rgba(0,0,0,0.5);
             position: relative;
@@ -839,9 +839,9 @@ si<!DOCTYPE html>
         .home-cards-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: clamp(15px, 4vw, 30px);
+            gap: clamp(20px, 4vw, 50px);
             width: 100%;
-            max-width: 900px;
+            max-width: none;
             margin: 0 auto;
         }
 
@@ -849,7 +849,7 @@ si<!DOCTYPE html>
             background: white;
             border: clamp(3px, 1vw, 6px) solid #7EC8E3;
             border-radius: clamp(12px, 2vw, 20px);
-            padding: clamp(25px, 4vw, 35px);
+            padding: clamp(25px, 4vw, 40px);
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -858,7 +858,7 @@ si<!DOCTYPE html>
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: clamp(150px, 25vw, 220px);
+            min-height: clamp(150px, 25vw, 300px);
             position: relative;
         }
 
@@ -874,23 +874,23 @@ si<!DOCTYPE html>
         }
 
         .home-card-icon {
-            font-size: clamp(45px, 12vw, 70px);
-            margin-bottom: clamp(12px, 2vw, 18px);
+            font-size: clamp(45px, 12vw, 90px);
+            margin-bottom: clamp(12px, 2vw, 20px);
             display: block;
         }
 
         .home-card-title {
             color: #2C5F7F;
             font-weight: 900;
-            font-size: clamp(16px, 3.5vw, 24px);
-            margin: clamp(8px, 1.5vw, 12px) 0;
+            font-size: clamp(16px, 3.5vw, 32px);
+            margin: clamp(8px, 1.5vw, 15px) 0;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .home-card-desc {
             color: #5EB3D6;
-            font-size: clamp(11px, 2.2vw, 14px);
+            font-size: clamp(11px, 2.2vw, 18px);
             font-weight: 600;
         }
 
@@ -1093,45 +1093,45 @@ si<!DOCTYPE html>
         @media (orientation: landscape) {
             .home-cards-container {
                 grid-template-columns: repeat(2, 1fr);
-                gap: clamp(15px, 3vw, 25px);
-                max-width: 95vw;
+                gap: clamp(20px, 4vw, 40px);
+                max-width: 100%;
                 width: 100%;
             }
 
             .home-card {
-                min-height: clamp(120px, 30vh, 180px);
-                padding: clamp(15px, 3vw, 25px);
+                min-height: clamp(120px, 28vh, 280px);
+                padding: clamp(20px, 3vw, 30px);
             }
 
             .home-card-icon {
-                font-size: clamp(35px, 10vh, 60px);
-                margin-bottom: clamp(8px, 1.5vw, 12px);
+                font-size: clamp(40px, 10vh, 80px);
+                margin-bottom: clamp(10px, 1.5vw, 15px);
             }
 
             .home-card-title {
-                font-size: clamp(14px, 3vh, 20px);
-                margin: clamp(6px, 1vw, 10px) 0;
+                font-size: clamp(16px, 3vh, 28px);
+                margin: clamp(6px, 1vw, 12px) 0;
             }
 
             .home-card-desc {
-                font-size: clamp(10px, 2vh, 12px);
+                font-size: clamp(11px, 2vh, 15px);
             }
 
             .content-card {
-                max-width: 95vw;
+                max-width: calc(100vw - 40px);
                 width: 100%;
                 max-height: 90vh;
-                padding: clamp(15px, 3vw, 25px);
+                padding: clamp(20px, 3vw, 30px);
             }
 
             h1 {
-                font-size: clamp(24px, 5vw, 32px);
-                margin-bottom: clamp(8px, 1.5vw, 12px);
+                font-size: clamp(26px, 5vw, 36px);
+                margin-bottom: clamp(10px, 1.5vw, 15px);
             }
 
             p {
-                font-size: clamp(12px, 2vw, 14px);
-                margin: clamp(4px, 1vw, 8px) 0;
+                font-size: clamp(13px, 2vw, 16px);
+                margin: clamp(5px, 1vw, 10px) 0;
             }
         }
 
