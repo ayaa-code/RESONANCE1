@@ -63,12 +63,12 @@ si<!DOCTYPE html>
             border: clamp(5px, 1.5vw, 8px) solid var(--wood);
             border-radius: clamp(12px, 3vw, 20px);
             padding: clamp(15px, 4vw, 40px);
-            max-width: calc(100vw - 40px);
+            max-width: min(95vw, 960px);
             width: 100%;
             text-align: center;
             box-shadow: 0 0 clamp(30px, 8vw, 50px) rgba(0,0,0,0.5);
             position: relative;
-            max-height: 85vh;
+            max-height: 90vh;
             overflow-y: auto;
             aspect-ratio: auto;
         }
@@ -839,7 +839,7 @@ si<!DOCTYPE html>
             grid-template-columns: repeat(2, 1fr);
             gap: clamp(20px, 4vw, 50px);
             width: 100%;
-            max-width: none;
+            max-width: min(95vw, 860px);
             margin: 0 auto;
         }
 
@@ -847,7 +847,7 @@ si<!DOCTYPE html>
             background: white;
             border: clamp(3px, 1vw, 6px) solid #7EC8E3;
             border-radius: clamp(12px, 2vw, 20px);
-            padding: clamp(25px, 4vw, 40px);
+            padding: clamp(20px, 3vw, 28px);
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -856,8 +856,10 @@ si<!DOCTYPE html>
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: clamp(150px, 25vw, 300px);
+            aspect-ratio: 1 / 1;
+            min-height: auto;
             position: relative;
+            width: 100%;
         }
 
         .home-card:hover {
@@ -872,7 +874,7 @@ si<!DOCTYPE html>
         }
 
         .home-card-icon {
-            font-size: clamp(45px, 12vw, 90px);
+            font-size: clamp(40px, 10vw, 72px);
             margin-bottom: clamp(12px, 2vw, 20px);
             display: block;
         }
