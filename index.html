@@ -593,11 +593,12 @@ si<!DOCTYPE html>
         .adventure-stage {
             position: relative;
             width: 100%;
-            height: clamp(260px, 37vh, 300px);
+            aspect-ratio: 1 / 1;
+            max-width: clamp(280px, 70vw, 400px);
+            margin: 0 auto clamp(18px, 3vw, 22px);
             background: linear-gradient(to bottom, #8ed081 0%, #8ed081 14%, #4a4a4a 14%, #4a4a4a 86%, #8ed081 86%, #8ed081 100%);
             border-radius: 18px;
             overflow: hidden;
-            margin-bottom: clamp(18px, 3vw, 22px);
             border: 3px solid rgba(255,255,255,0.45);
             box-shadow: inset 0 0 20px rgba(0,0,0,0.14);
         }
